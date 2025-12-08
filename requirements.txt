@@ -1,0 +1,13 @@
+opencv-python
+playwright
+numpy
+pillow
+google-genai
+python-dotenv
+sounddevice
+soundfile
+rapidocr_onnxruntime
+mss
+scipy
+gradio
+pandas
