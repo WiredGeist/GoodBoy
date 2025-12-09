@@ -1,4 +1,4 @@
-🐕 Good Boy: An OCR & TTS Companion for Gaming
+🐕 Good Boy: An OCR & TTS Companion for ARC Raiders
 Created by WiredGeist
 
 ### What is this?
