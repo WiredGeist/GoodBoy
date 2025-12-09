@@ -35,32 +35,10 @@ Think of it as a glorified screen-reader that I over-engineered to see how well 
 
 ### 🚀 Getting Started
 
-1.  **Clone the repo**
-    ```bash
-    git clone https://github.com/WiredGeist/GoodBoy.git
-    cd GoodBoy
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Set up Playwright**
-    ```bash
-    playwright install chromium
-    ```
-
-4.  **Add your API Key**
-    Create a `.env` file in the root folder and add your Google Gemini API key:
-    ```ini
-    GEMINI_API_KEY=your_key_goes_here
-    ```
-
-5.  **Run the script**
-    ```bash
-    python main.py
-    ```
+**1. Clone the repo**
+```bash
+git clone https://github.com/WiredGeist/GoodBoy.git
+cd GoodBoy
 
 ---
 
