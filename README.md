@@ -42,6 +42,48 @@ cd GoodBoy
 ```
 ---
 
+🚀 Getting Started
+
+1.  Clone the repo code Bash
+
+git clone [https://github.com/WiredGeist/GoodBoy.git](https://github.com/WiredGeist/GoodBoy.git) cd GoodBoy
+
+2.  Add your API Key This is the only manual step. Before running anything, create a file named .env in the GoodBoy folder and add your Google Gemini API key like this: code Ini
+
+GEMINI\API\KEY=your\key\goes\here
+
+3.  Installation & Launch For Windows Users (Easy Method)
+
+Simply double-click and run the start\bounty\hunter.bat file.
+
+This script will automatically:
+
+    Install all the required Python packages from requirements.txt.
+    
+    Set up the necessary browser component via playwright.
+    
+    Launch the main program (main.py).
+    
+
+For macOS/Linux or Manual Installation
+
+If you aren't on Windows or prefer to install manually, run these commands in your terminal: code Bash
+
+Install Python packages
+=======================
+
+pip install -r requirements.txt
+
+Install the browser component
+=============================
+
+playwright install chromium
+
+Run the script
+==============
+
+python main.py
+
 ### 🎮 How to Use
 
 1.  Once running, open the Gradio interface (usually `http://127.0.0.1:7860`).
