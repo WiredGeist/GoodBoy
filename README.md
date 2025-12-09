@@ -1,4 +1,4 @@
-# 🐕 Good Boy: An OCR & TTS Companion for Gaming
+🐕 Good Boy: An OCR & TTS Companion for Gaming
 Created by WiredGeist
 
 ### What is this?
@@ -35,45 +35,42 @@ Think of it as a glorified screen-reader that I over-engineered to see how well 
 
 ### 🚀 Getting Started
 
-1.  Clone the repo code Bash
+**1. Clone the repo**
+```bash
+git clone https://github.com/WiredGeist/GoodBoy.git
+cd GoodBoy
+```
 
-git clone [https://github.com/WiredGeist/GoodBoy.git](https://github.com/WiredGeist/GoodBoy.git) cd GoodBoy
+**2. Add your API Key**
+This is the only manual step. Before running anything, create a file named `.env` in the `GoodBoy` folder and add your Google Gemini API key like this:
+```ini
+GEMINI_API_KEY=your_key_goes_here
+```
 
-2.  Add your API Key This is the only manual step. Before running anything, create a file named .env in the GoodBoy folder and add your Google Gemini API key like this: code Ini
+**3. Installation & Launch**
 
-GEMINI\API\KEY=your\key\goes\here
-
-3.  Installation & Launch For Windows Users (Easy Method)
-
-Simply double-click and run the start\bounty\hunter.bat file.
+#### For Windows Users (Easy Method)
+Simply double-click and run the `start_bounty_hunter.bat` file.
 
 This script will automatically:
+1.  Install all the required Python packages from `requirements.txt`.
+2.  Set up the necessary browser component via `playwright`.
+3.  Launch the main program (`main.py`).
 
-    Install all the required Python packages from requirements.txt.
-    
-    Set up the necessary browser component via playwright.
-    
-    Launch the main program (main.py).
-    
-
-For macOS/Linux or Manual Installation
-
-If you aren't on Windows or prefer to install manually, run these commands in your terminal: code Bash
-
-Install Python packages
-=======================
-
+#### For macOS/Linux or Manual Installation
+If you aren't on Windows or prefer to install manually, run these commands in your terminal:
+```bash
+# Install Python packages
 pip install -r requirements.txt
 
-Install the browser component
-=============================
-
+# Install the browser component
 playwright install chromium
 
-Run the script
-==============
-
+# Run the script
 python main.py
+```
+
+---
 
 ### 🎮 How to Use
 
