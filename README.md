@@ -1,103 +1,84 @@
-Good Boy: An OCR & TTS Companion for Gaming
-
+# 🐕 Good Boy: An OCR & TTS Companion for Gaming
 Created by WiredGeist
-What is this?
+
+### What is this?
 
 "Good Boy" is a Python script I built as a fun coding challenge. It uses Optical Character Recognition (OCR) to read text from your screen (like a game's UI) and uses Text-to-Speech (TTS) to provide audio feedback.
 
 Think of it as a glorified screen-reader that I over-engineered to see how well different Python libraries could work together in a real-time gaming environment. It’s a proof-of-concept, not a competitive tool.
 
-It reads pixels, sends requests, and talks back. That's it.
-⚙️ Features (The Technical Bits)
+> It reads pixels, sends requests, and talks back. That's it.
 
-    Real-Time Text Recognition: Uses RapidOCR and MSS to capture and read text from user-defined screen regions, such as in-game chat UI.
+---
 
-    Dynamic Region Monitoring: Can watch multiple screen areas simultaneously, including dynamic pop-ups like "KNOCKED OUT BY" notifications.
+### ⚙️ Features (The Technical Bits)
 
-    API Integration: Cross-references the recognized text with an external data source (currently configured for the Speranza community site via Playwright).
+*   **Real-Time Text Recognition:** Uses `RapidOCR` and `MSS` to capture and read text from user-defined screen regions, such as in-game chat UI.
+*   **Dynamic Region Monitoring:** Can watch multiple screen areas simultaneously, including dynamic pop-ups like "KNOCKED OUT BY" notifications.
+*   **API Integration:** Cross-references the recognized text with an external data source (currently configured for the Speranza community site via Playwright).
+*   **AI Summarization & TTS:** Uses Google Gemini to process text and provides a brief audio summary via `KittenTTS`.
+*   **Request Queue System:** Features a simple queue to manage multiple text detections in rapid succession, ensuring stable performance.
+*   **Local Session History:** Saves a log of recognized names to a local file, with a simple Gradio dashboard for adding personal notes.
 
-    AI Summarization & TTS: Uses Google Gemini to process text and provides a brief audio summary via KittenTTS.
+---
 
-    Request Queue System: Features a simple queue to manage multiple text detections in rapid succession, ensuring stable performance.
+### 🛠️ The Tech Stack
 
-    Local Session History: Saves a log of recognized names to a local file, with a simple Gradio dashboard for adding personal notes.
+*   **Interface:** `Gradio` (with a custom theme)
+*   **Screen Capture:** `MSS`
+*   **Optical Character Recognition:** `RapidOCR` & `OpenCV`
+*   **Web Automation:** `Playwright` (for interacting with the data source)
+*   **AI Model:** Google `Gemini Flash`
+*   **Text-to-Speech:** `KittenTTS`
 
-🛠️ The Tech Stack
+---
 
-    Interface: Gradio (with a custom theme)
+### 🚀 Getting Started
 
-    Screen Capture: MSS
+1.  **Clone the repo**
+    ```bash
+    git clone https://github.com/WiredGeist/GoodBoy.git
+    cd GoodBoy
+    ```
 
-    Optical Character Recognition: RapidOCR & OpenCV
+2.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-    Web Automation: Playwright (for interacting with the data source)
+3.  **Set up Playwright**
+    ```bash
+    playwright install chromium
+    ```
 
-    AI Model: Google Gemini Flash
+4.  **Add your API Key**
+    Create a `.env` file in the root folder and add your Google Gemini API key:
+    ```ini
+    GEMINI_API_KEY=your_key_goes_here
+    ```
 
-    Text-to-Speech: KittenTTS
+5.  **Run the script**
+    ```bash
+    python main.py
+    ```
 
-🚀 Getting Started
+---
 
-1. Clone the repo
-code Bash
+### 🎮 How to Use
 
-    
-git clone https://github.com/WiredGeist/GoodBoy.git
-cd GoodBoy
+1.  Once running, open the Gradio interface (usually `http://127.0.0.1:7860`).
+2.  Navigate to the **Settings & Calibration** tab.
+3.  Click **Take Screenshot**. Drag the sliders to position the Green Box over the proximity chat UI and the Red Box over the death screen notification text.
+4.  Go to the **Dashboard** tab and click **START**.
+5.  Play your game. The script will provide audio cues when it recognizes text in the defined regions.
 
-  
+---
 
-2. Install dependencies
-code Bash
-
-    
-pip install -r requirements.txt
-
-  
-
-3. Set up Playwright
-code Bash
-
-    
-playwright install chromium
-
-  
-
-4. Add your API Key
-Create a .env file in the root folder and add your Google Gemini API key:
-code Ini
-
-    
-GEMINI_API_KEY=your_key_goes_here
-
-  
-
-5. Run the script
-code Bash
-
-    
-python main.py
-
-  
-
-🎮 How to Use
-
-    Once running, open the Gradio interface (usually http://127.0.0.1:7860).
-
-    Navigate to the Settings & Calibration tab.
-
-    Click Take Screenshot. Drag the sliders to position the Green Box over the proximity chat UI and the Red Box over the death screen notification text.
-
-    Go to the Dashboard tab and click START.
-
-    Play your game. The script will provide audio cues when it recognizes text in the defined regions.
-
-⚠️ Disclaimer
+### ⚠️ Disclaimer
 
 This tool is an educational project that demonstrates the use of OCR in a real-time application.
 
-    ✅ It only reads pixels from your screen.
+*   ✅ It **only** reads pixels from your screen.
+*   ❌ It **does not** read game memory, inject code, or interact with game files in any way.
 
-    ❌ It does not read game memory, inject code, or interact with game files in any way.
-
-This script is provided as-is. Use it at your own risk. Users are responsible for their own actions. Do not use this tool to harass other players or violate any game's Terms of Service. Be a good human.
+This script is provided as-is. Use it at your own risk. Users are responsible for their own actions. **Do not use this tool to harass other players or violate any game's Terms of Service. Be a good human.**
