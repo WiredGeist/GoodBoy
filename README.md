@@ -39,7 +39,7 @@ Think of it as a glorified screen-reader that I over-engineered to see how well 
 ```bash
 git clone https://github.com/WiredGeist/GoodBoy.git
 cd GoodBoy
-
+```
 ---
 
 ### 🎮 How to Use
