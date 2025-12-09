@@ -1,48 +1,53 @@
-🐕 GOOD BOY
+Good Boy: An OCR & TTS Companion for Gaming
+
 Created by WiredGeist
+What is this?
 
-GOOD BOY is your tactical emotional support dog for Arc Raiders. He sits in the background, watches your screen, and barks (figuratively) when he sees a bad guy.
+"Good Boy" is a Python script I built as a fun coding challenge. It uses Optical Character Recognition (OCR) to read text from your screen (like a game's UI) and uses Text-to-Speech (TTS) to provide audio feedback.
 
-Basically, it reads names from Proximity Chat and your Death Screen, Googles them on the bounty database, and tells you if they are a friendly streamer or a toxic extraction camper using AI voice.
+Think of it as a glorified screen-reader that I over-engineered to see how well different Python libraries could work together in a real-time gaming environment. It’s a proof-of-concept, not a competitive tool.
 
-He protec, he attac, but mostly he reads text off your screen.
-🦴 What does he do?
+It reads pixels, sends requests, and talks back. That's it.
+⚙️ Features (The Technical Bits)
 
-    Sniffs out Enemies: Uses OCR to read names from the proximity chat UI instantly.
+    Real-Time Text Recognition: Uses RapidOCR and MSS to capture and read text from user-defined screen regions, such as in-game chat UI.
 
-    Revenge Mode: Reads the "KNOCKED OUT BY" screen (even with the inverted colors) so you know exactly who to hold a grudge against.
+    Dynamic Region Monitoring: Can watch multiple screen areas simultaneously, including dynamic pop-ups like "KNOCKED OUT BY" notifications.
 
-    The Gossip Protocol: Cross-references names with community bounty lists.
+    API Integration: Cross-references the recognized text with an external data source (currently configured for the Speranza community site via Playwright).
 
-    AI Snitching: Uses Google Gemini AI to read the bounty reports and summarize exactly why that player is bad news (e.g., "Betrayer," "Loot Goblin") via TTS.
+    AI Summarization & TTS: Uses Google Gemini to process text and provides a brief audio summary via KittenTTS.
 
-    No Crashes: Features a smart queue system. If 10 people rush you at once, GOOD BOY waits his turn to dox them one by one.
+    Request Queue System: Features a simple queue to manage multiple text detections in rapid succession, ensuring stable performance.
 
-    Memory: Keeps a local history of everyone you've met. You can even write your own notes in the dashboard (like "This guy gave me a medkit" or "KOS").
+    Local Session History: Saves a log of recognized names to a local file, with a simple Gradio dashboard for adding personal notes.
 
-🛠️ The Brains (Tech Stack)
+🛠️ The Tech Stack
 
-    Interface: Gradio (Custom Blue/Cyan "Sci-Fi" Theme)
+    Interface: Gradio (with a custom theme)
 
-    Eyes: RapidOCR & OpenCV & MSS
+    Screen Capture: MSS
 
-    Legs: Playwright (for browsing the bounty site)
+    Optical Character Recognition: RapidOCR & OpenCV
 
-    Brain: Google Gemini 2.0 Flash
+    Web Automation: Playwright (for interacting with the data source)
 
-    Voice: KittenTTS
+    AI Model: Google Gemini Flash
 
-🚀 How to wake him up
+    Text-to-Speech: KittenTTS
+
+🚀 Getting Started
+
 1. Clone the repo
 code Bash
 
     
-git clone https://github.com/WiredGeist/good-boy-watchdog.git
-cd good-boy-watchdog
+git clone https://github.com/WiredGeist/GoodBoy.git
+cd GoodBoy
 
   
 
-2. Feed him requirements
+2. Install dependencies
 code Bash
 
     
@@ -50,7 +55,7 @@ pip install -r requirements.txt
 
   
 
-3. Install the browser stuff
+3. Set up Playwright
 code Bash
 
     
@@ -58,9 +63,8 @@ playwright install chromium
 
   
 
-4. Give him a brain (API Key)
-
-Create a .env file in the folder and add your Gemini key:
+4. Add your API Key
+Create a .env file in the root folder and add your Google Gemini API key:
 code Ini
 
     
@@ -68,7 +72,7 @@ GEMINI_API_KEY=your_key_goes_here
 
   
 
-5. Let him run
+5. Run the script
 code Bash
 
     
@@ -76,22 +80,24 @@ python main.py
 
   
 
-🎮 How to use
+🎮 How to Use
 
-    Open the link (usually http://127.0.0.1:7860).
+    Once running, open the Gradio interface (usually http://127.0.0.1:7860).
 
-    Go to Settings & Calibration.
+    Navigate to the Settings & Calibration tab.
 
-    Click Take Screenshot. Move the sliders until the Green Box is over the Prox Chat names and the Red Box is over the Death Screen text.
+    Click Take Screenshot. Drag the sliders to position the Green Box over the proximity chat UI and the Red Box over the death screen notification text.
 
-    Go to Dashboard and click START.
+    Go to the Dashboard tab and click START.
 
-    Play the game. Good Boy will speak to you when he finds intel.
+    Play your game. The script will provide audio cues when it recognizes text in the defined regions.
 
 ⚠️ Disclaimer
 
-This tool uses OCR (Optical Character Recognition) to look at your screen. It's essentially a fancy screenshot tool. It does not touch game memory or inject code.
+This tool is an educational project that demonstrates the use of OCR in a real-time application.
 
-However, use it at your own risk. I'm just a coder, not your lawyer.
+    ✅ It only reads pixels from your screen.
 
-Created by WiredGeist
+    ❌ It does not read game memory, inject code, or interact with game files in any way.
+
+This script is provided as-is. Use it at your own risk. Users are responsible for their own actions. Do not use this tool to harass other players or violate any game's Terms of Service. Be a good human.
