@@ -35,15 +35,6 @@ Think of it as a glorified screen-reader that I over-engineered to see how well 
 
 ### 🚀 Getting Started
 
-**1. Clone the repo**
-```bash
-git clone https://github.com/WiredGeist/GoodBoy.git
-cd GoodBoy
-```
----
-
-🚀 Getting Started
-
 1.  Clone the repo code Bash
 
 git clone [https://github.com/WiredGeist/GoodBoy.git](https://github.com/WiredGeist/GoodBoy.git) cd GoodBoy
